@@ -52,37 +52,28 @@ class AvailabilityAdapter(
                 View.GONE
             }
 
-            // Update morning slot
-            binding.morningCard.apply {
-                setCardBackgroundColor(if (daySchedule.morning.isAvailable) 
+            // Update time slots
+            updateTimeSlot(binding.morningCard, daySchedule.morning.isAvailable) {
+                onTimeSlotClick(position, TimeRegion.MORNING)
+            }
+            updateTimeSlot(binding.afternoonCard, daySchedule.afternoon.isAvailable) {
+                onTimeSlotClick(position, TimeRegion.AFTERNOON)
+            }
+            updateTimeSlot(binding.nightCard, daySchedule.night.isAvailable) {
+                onTimeSlotClick(position, TimeRegion.NIGHT)
+            }
+        }
+
+        private fun updateTimeSlot(card: MaterialCardView, isAvailable: Boolean, onClick: () -> Unit) {
+            card.apply {
+                setCardBackgroundColor(if (isAvailable) 
                     android.graphics.Color.parseColor("#E3F2FD") 
                     else android.graphics.Color.WHITE)
-                strokeColor = if (daySchedule.morning.isAvailable)
+                strokeColor = if (isAvailable)
                     android.graphics.Color.parseColor("#2196F3")
                     else android.graphics.Color.LTGRAY
-                setOnClickListener { onTimeSlotClick(position, TimeRegion.MORNING) }
-            }
-
-            // Update afternoon slot
-            binding.afternoonCard.apply {
-                setCardBackgroundColor(if (daySchedule.afternoon.isAvailable)
-                    android.graphics.Color.parseColor("#E3F2FD")
-                    else android.graphics.Color.WHITE)
-                strokeColor = if (daySchedule.afternoon.isAvailable)
-                    android.graphics.Color.parseColor("#2196F3")
-                    else android.graphics.Color.LTGRAY
-                setOnClickListener { onTimeSlotClick(position, TimeRegion.AFTERNOON) }
-            }
-
-            // Update night slot
-            binding.nightCard.apply {
-                setCardBackgroundColor(if (daySchedule.night.isAvailable)
-                    android.graphics.Color.parseColor("#E3F2FD")
-                    else android.graphics.Color.WHITE)
-                strokeColor = if (daySchedule.night.isAvailable)
-                    android.graphics.Color.parseColor("#2196F3")
-                    else android.graphics.Color.LTGRAY
-                setOnClickListener { onTimeSlotClick(position, TimeRegion.NIGHT) }
+                cardElevation = if (isAvailable) 4f else 0f
+                setOnClickListener { onClick() }
             }
         }
     }

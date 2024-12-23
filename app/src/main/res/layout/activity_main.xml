@@ -22,10 +22,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingHorizontal="8dp"
-        android:layout_marginBottom="8dp">
+        android:layout_marginBottom="12dp">
 
         <Space
-            android:layout_width="100dp"
+            android:layout_width="95dp"
             android:layout_height="wrap_content" />
 
         <LinearLayout
@@ -40,7 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Morning"
-                android:textSize="12sp"
+                android:textSize="13sp"
+                android:textStyle="bold"
                 android:textColor="#424242"
                 android:gravity="center"
                 android:layout_marginEnd="4dp" />
@@ -50,7 +51,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Afternoon"
-                android:textSize="12sp"
+                android:textSize="13sp"
+                android:textStyle="bold"
                 android:textColor="#424242"
                 android:gravity="center"
                 android:layout_marginHorizontal="4dp" />
@@ -60,13 +62,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Night"
-                android:textSize="12sp"
+                android:textSize="13sp"
+                android:textStyle="bold"
                 android:textColor="#424242"
                 android:gravity="center"
                 android:layout_marginStart="4dp" />
 
         </LinearLayout>
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="8dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/availabilityRecyclerView"

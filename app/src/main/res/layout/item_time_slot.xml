@@ -6,15 +6,16 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/dayContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingVertical="4dp"
+        android:paddingVertical="8dp"
         android:paddingHorizontal="8dp">
 
         <LinearLayout
-            android:layout_width="100dp"
+            android:layout_width="95dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             
@@ -28,10 +29,11 @@
 
             <TextView
                 android:id="@+id/dayNumber"
-                android:layout_width="25dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:textColor="#2196F3"
                 android:textSize="14sp"
+                android:gravity="end"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -45,50 +47,44 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/morningCard"
                 android:layout_width="0dp"
-                android:layout_height="32dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="4dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:stateListAnimator="@null"
                 app:cardElevation="0dp"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="8dp"
                 app:strokeWidth="1dp"
-                app:strokeColor="#E0E0E0">
-
-
-            </com.google.android.material.card.MaterialCardView>
+                app:strokeColor="#E0E0E0" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/afternoonCard"
                 android:layout_width="0dp"
-                android:layout_height="32dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_marginHorizontal="4dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:stateListAnimator="@null"
                 app:cardElevation="0dp"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="8dp"
                 app:strokeWidth="1dp"
-                app:strokeColor="#E0E0E0">
-
-
-            </com.google.android.material.card.MaterialCardView>
+                app:strokeColor="#E0E0E0" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/nightCard"
                 android:layout_width="0dp"
-                android:layout_height="32dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_marginStart="4dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:stateListAnimator="@null"
                 app:cardElevation="0dp"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="8dp"
                 app:strokeWidth="1dp"
-                app:strokeColor="#E0E0E0">
-
-
-            </com.google.android.material.card.MaterialCardView>
+                app:strokeColor="#E0E0E0" />
 
         </LinearLayout>
     </LinearLayout>
@@ -97,8 +93,9 @@
         android:id="@+id/weekSeparator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#E0E0E0"
-        android:layout_marginVertical="8dp"
+        android:background="#2196F3"
+        android:alpha="0.1"
+        android:layout_marginVertical="12dp"
         android:layout_marginHorizontal="8dp"
         android:visibility="gone" />
 </LinearLayout>
